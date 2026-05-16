@@ -1,13 +1,50 @@
 # tryx
 
-`tryx` is an experimental Rust workspace for outcome types that work with the `?` operator beyond `Result` and `Option`.
+`tryx` is an experimental nightly Rust library for outcome types that work with the `?` operator beyond `Result` and `Option`.
 
-The library is nightly-only and requires `try_trait_v2`. The workspace pins `nightly-2026-03-28`, the locally available known-good toolchain used to start the project.
+It currently includes:
+
+- `Cancel<T>` for cancellation-aware control flow
+- `Checked<Finite>` for checked floating-point operations
+- `Parsing<'a, T>` for parser-style outcomes with diagnostics
+- `Stage<S, T, P>` for staged computations that retain partial state
+- `#[derive(Outcome)]` for simple custom outcome enums
+
+`tryx` requires nightly Rust and `try_trait_v2`. The workspace pins `nightly-2026-03-28`.
+
+## Example
 
 ```rust
 #![feature(try_trait_v2)]
 
-// API examples will land with the first implemented outcome type.
+use tryx::cancel::{Cancel, CancelToken};
+
+fn work(token: &CancelToken) -> Cancel<u32> {
+    token.check()?;
+    Cancel::ok(42)
+}
+
+let (token, handle) = CancelToken::new();
+assert_eq!(work(&token), Cancel::Done(42));
+
+handle.cancel();
+assert_eq!(work(&token), Cancel::Cancelled);
 ```
 
-The build plan lives in [PROJECT_BUILD_PLAN.md](PROJECT_BUILD_PLAN.md). The mdBook source will live under `docs/`.
+## Docs
+
+Build the book and API docs locally:
+
+```sh
+mdbook build docs
+cargo doc --workspace --all-features --no-deps
+```
+
+Run the examples:
+
+```sh
+cargo run -p tryx --example cancel_basic --features cancel
+cargo run -p tryx --example quadratic --features checked
+cargo run -p tryx --example kv_parser --features parsing
+cargo run -p tryx --example etl_pipeline --features stage
+```
