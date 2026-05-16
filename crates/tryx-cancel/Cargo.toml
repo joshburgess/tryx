@@ -1,0 +1,16 @@
+[package]
+name = "tryx-cancel"
+description = "Cancellation outcome types for tryx"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[features]
+default = []
+cancel-reason = []
+std = ["tryx-core/std"]
+
+[dependencies]
+tryx-core.workspace = true

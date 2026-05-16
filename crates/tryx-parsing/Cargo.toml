@@ -1,0 +1,19 @@
+[package]
+name = "tryx-parsing"
+description = "Parser outcome type for tryx"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[features]
+default = ["alloc"]
+alloc = []
+std = ["alloc"]
+
+[dependencies]
+tryx-core.workspace = true
+
+[dev-dependencies]
+insta.workspace = true

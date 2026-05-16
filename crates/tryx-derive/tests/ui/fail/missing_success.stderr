@@ -1,0 +1,5 @@
+error: missing #[outcome(success)]
+ --> tests/ui/fail/missing_success.rs:4:6
+  |
+4 | enum MissingSuccess {
+  |      ^^^^^^^^^^^^^^

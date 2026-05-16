@@ -1,0 +1,5 @@
+error: multiple success variants
+ --> tests/ui/fail/multiple_success.rs:8:5
+  |
+8 |     B(u8),
+  |     ^

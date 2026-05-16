@@ -1,0 +1,15 @@
+[package]
+name = "tryx-stage"
+description = "Staged computation outcome type for tryx"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[features]
+default = []
+std = []
+
+[dependencies]
+tryx-core.workspace = true

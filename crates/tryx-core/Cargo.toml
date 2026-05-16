@@ -1,0 +1,16 @@
+[package]
+name = "tryx-core"
+description = "Internal support crate for tryx outcome types"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[features]
+default = []
+alloc = []
+std = []
+
+[dev-dependencies]
+trybuild.workspace = true

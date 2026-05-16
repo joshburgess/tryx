@@ -1,0 +1,22 @@
+[workspace]
+members = ["crates/*"]
+resolver = "2"
+
+[workspace.package]
+version = "0.1.0"
+edition = "2024"
+license = "MIT OR Apache-2.0"
+repository = "https://github.com/joshburgess/tryx"
+rust-version = "1.96"
+
+[workspace.dependencies]
+tryx-core = { version = "0.1.0", path = "crates/tryx-core" }
+tryx-derive = { version = "0.1.0", path = "crates/tryx-derive" }
+tryx-cancel = { version = "0.1.0", path = "crates/tryx-cancel" }
+tryx-checked = { version = "0.1.0", path = "crates/tryx-checked" }
+tryx-parsing = { version = "0.1.0", path = "crates/tryx-parsing" }
+tryx-stage = { version = "0.1.0", path = "crates/tryx-stage" }
+proptest = "1"
+serde = { version = "1", default-features = false }
+insta = "1"
+trybuild = "1"

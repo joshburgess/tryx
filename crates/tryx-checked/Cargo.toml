@@ -1,0 +1,21 @@
+[package]
+name = "tryx-checked"
+description = "Checked finite floating-point outcome types for tryx"
+version.workspace = true
+edition.workspace = true
+license.workspace = true
+repository.workspace = true
+rust-version.workspace = true
+
+[features]
+default = []
+std = []
+subnormal = []
+serde = ["dep:serde"]
+
+[dependencies]
+tryx-core.workspace = true
+serde = { workspace = true, optional = true }
+
+[dev-dependencies]
+proptest.workspace = true

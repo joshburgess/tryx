@@ -1,0 +1,5 @@
+error: variant must have exactly one unnamed field
+ --> tests/ui/fail/multiple_fields.rs:8:7
+  |
+8 |     No(&'static str, &'static str),
+  |       ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
