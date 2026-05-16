@@ -26,25 +26,20 @@ tryx-stage = { workspace = true, optional = true }
 
 [[example]]
 name = "cancel_basic"
-path = "../../examples/cancel_basic.rs"
 required-features = ["cancel"]
 
 [[example]]
 name = "cancel_render_loop"
-path = "../../examples/cancel_render_loop.rs"
 required-features = ["cancel"]
 
 [[example]]
 name = "quadratic"
-path = "../../examples/quadratic.rs"
 required-features = ["checked"]
 
 [[example]]
 name = "kv_parser"
-path = "../../examples/kv_parser.rs"
 required-features = ["parsing"]
 
 [[example]]
 name = "etl_pipeline"
-path = "../../examples/etl_pipeline.rs"
 required-features = ["stage"]
