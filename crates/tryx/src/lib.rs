@@ -1,4 +1,7 @@
-#![doc = include_str!("../../../README.md")]
+//! Nightly outcome types for Rust's `?` operator.
+//!
+//! `tryx` re-exports feature-gated outcome crates from one user-facing entry
+//! point.
 
 #[cfg(feature = "cancel")]
 pub use tryx_cancel as cancel;
